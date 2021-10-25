@@ -4,9 +4,9 @@ namespace ShopAPI.Controllers
 {
     [Route("api/product")]
     [ApiController]
-    public class ShopController : ControllerBase
+    public class OrderController : ControllerBase
     {
-        public ShopController()
+        public OrderController()
         {
 
         }

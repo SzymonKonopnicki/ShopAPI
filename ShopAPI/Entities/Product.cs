@@ -5,7 +5,7 @@
         public int ProductId { get; set; }
         public string Name { get; set; }
         public bool Available { get; set; }
-        public int PriceS { get; set; }
+        public double PriceS { get; set; }
 
         public int OrderId {  get; set; }
         public Order Order { get; set; }

@@ -28,7 +28,10 @@ namespace ShopAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ShopContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ShopContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<ShopDbOrderSeed>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -38,8 +41,10 @@ namespace ShopAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ShopDbOrderSeed orderSeed)
         {
+            orderSeed.Seed();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

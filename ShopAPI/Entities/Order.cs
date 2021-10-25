@@ -10,7 +10,7 @@ namespace ShopAPI.Entities
         public int Quantity { get; set; }
         public DateTime DateDelivery { get; set; }
         public Address Addresses {  get; set; }
-        public ICollection<Product> Products {  get;}
+        public List<Product> Products { get; set; }
 
         //Add attribute like [RequiredAttribute]
         //public decimal TotalPrice {  get; set; }

@@ -64,7 +64,7 @@ namespace ShopAPI.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("ShopAPI.Entities.Product", b =>
+            modelBuilder.Entity("ShopAPI.Entities.Products", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -101,7 +101,7 @@ namespace ShopAPI.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("ShopAPI.Entities.Product", b =>
+            modelBuilder.Entity("ShopAPI.Entities.Products", b =>
                 {
                     b.HasOne("ShopAPI.Entities.Order", "Order")
                         .WithMany("Products")
