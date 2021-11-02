@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopAPI.Entities
 {
@@ -9,7 +10,7 @@ namespace ShopAPI.Entities
         public int OrderId { get; set; }
         public int Quantity { get; set; }
         public DateTime DateDelivery { get; set; }
-        public Address Addresses {  get; set; }
+        public Address Addresses { get; set; }
         public List<Product> Products { get; set; }
 
         //Add attribute like [RequiredAttribute]

@@ -8,7 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ShopAPI.Controllers;
 using ShopAPI.Entities;
+using ShopAPI.Interfaces;
+using ShopAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,10 +33,14 @@ namespace ShopAPI
         {
             services.AddDbContext<ShopContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+           
 
             services.AddScoped<ShopDbOrderSeed>();
+            services.AddScoped<IOrderService, OrderService>();
+
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ShopAPI", Version = "v1" });
@@ -43,7 +50,7 @@ namespace ShopAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ShopDbOrderSeed orderSeed)
         {
-            orderSeed.Seed();
+            //orderSeed.Seed();
 
             if (env.IsDevelopment())
             {

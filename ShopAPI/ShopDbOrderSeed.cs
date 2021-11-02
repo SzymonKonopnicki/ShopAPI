@@ -27,9 +27,9 @@ namespace ShopAPI
             }
         }
 
-        public List<Order> GetOrders()
+        public IEnumerable<Order> GetOrders()
         {
-            List<Order> initial = new List<Order>()
+            var initial = new List<Order>()
             {
                  new Order()
                  {
@@ -78,6 +78,7 @@ namespace ShopAPI
                         City = "Strzelin",
                         Email = "konopnicki@gmail.com",
                         Street = "Stalowa"
+
                     },
                     Products = new List<Product>
                     {
