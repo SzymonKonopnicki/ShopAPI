@@ -37,7 +37,7 @@ namespace ShopAPI
 
             services.AddScoped<ShopDbOrderSeed>();
             services.AddScoped<IOrderService, OrderService>();
-
+            services.AddAutoMapper(this.GetType().Assembly);
 
             services.AddControllers();
 

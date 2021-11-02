@@ -1,11 +1,12 @@
 ﻿using ShopAPI.Entities;
+using ShopAPI.Model;
 using System.Collections.Generic;
 
 namespace ShopAPI.Interfaces
 {
     public interface IOrderService
     {
-        public Order ShowById(int id);
-        public IEnumerable<Order> ShowAll();
+        public OrderDto ShowById(int id);
+        public IEnumerable<OrderDto> ShowAll();
     }
 }

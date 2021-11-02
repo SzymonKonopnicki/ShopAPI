@@ -26,6 +26,8 @@ namespace ShopAPI.Entities
             modelBuilder.Entity<Address>()
                 .Property(p => p.City)
                 .IsRequired();
+
+
         }
 
     }
