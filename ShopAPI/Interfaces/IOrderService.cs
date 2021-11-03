@@ -8,5 +8,8 @@ namespace ShopAPI.Interfaces
     {
         public OrderDto ShowById(int id);
         public IEnumerable<OrderDto> ShowAll();
+        public void DeleteById(int id);
+        public void CreateNewOrder(OrderCreateDto orderDto);
+        public void PutOrder(UpdataOrderDto updataOrderDto, int id);
     }
 }

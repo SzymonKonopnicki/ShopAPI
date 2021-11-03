@@ -19,7 +19,7 @@ namespace ShopAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<OrderDto> GetOne([FromRoute]int id)
+        public ActionResult<OrderDto> GetOne([FromRoute] int id)
         {
             var order = _orderService.ShowById(id);
 
@@ -34,5 +34,26 @@ namespace ShopAPI.Controllers
             return Ok(order);
         }
 
+        [HttpDelete("{id}")]
+        public ActionResult DeleteOrder([FromRoute] int id)
+        {
+            _orderService.DeleteById(id);
+            return Ok("Akcja przebiegła pomyślnie");
+        }
+
+        [HttpPost]
+        public ActionResult CreateOrder([FromBody] OrderCreateDto orderDto)
+        {
+            _orderService.CreateNewOrder(orderDto);
+
+            return Ok(Created("Dodano zamówienie", null));
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult EditOrder([FromBody]UpdataOrderDto updataOrderDto, [FromRoute]int id)
+        {
+            _orderService.PutOrder(updataOrderDto, id);
+            return Ok();
+        }
     }
 }

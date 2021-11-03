@@ -50,7 +50,7 @@ namespace ShopAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ShopDbOrderSeed orderSeed)
         {
-            //orderSeed.Seed();
+            orderSeed.Seed();
 
             if (env.IsDevelopment())
             {

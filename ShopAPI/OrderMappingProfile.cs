@@ -14,6 +14,13 @@ namespace ShopAPI
                 .ForMember(x => x.Email, y => y.MapFrom(z => z.Addresses.Email));
 
             CreateMap<Product, ProductDto>();
+
+            CreateMap<OrderCreateDto, Order>()
+                .ForMember(x => x.Addresses, y => y.MapFrom(z => new Address
+                    { City = z.City, Email= z.Email, Street = z.Street }));
+
+            CreateMap<ProductDto, Product>();
+
         }
     }
 }
