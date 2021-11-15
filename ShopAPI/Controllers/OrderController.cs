@@ -46,7 +46,7 @@ namespace ShopAPI.Controllers
         {
             _orderService.CreateNewOrder(orderDto);
 
-            return Ok(Created("Dodano zamówienie", null));
+            return Ok(Created("Akcja przebiegła pomyślnie", null));
         }
 
         [HttpPut("{id}")]

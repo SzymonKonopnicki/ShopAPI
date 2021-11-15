@@ -6,6 +6,7 @@ using ShopAPI.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ShopAPI.Exceptions;
 
 namespace ShopAPI.Services
 {
@@ -22,12 +23,8 @@ namespace ShopAPI.Services
 
         public void CreateNewOrder(OrderCreateDto orderCreateDto)
         {
-            if (orderCreateDto == null)
-            {
-                throw new ArgumentException("Bład");
-            }
-
             var newOrder = _mapper.Map<Order>(orderCreateDto);
+            newOrder.Quantity = newOrder.Products.Count;
 
             _context.Add(newOrder);
 
@@ -36,17 +33,14 @@ namespace ShopAPI.Services
 
         public void DeleteById(int id)
         {
-
             var order = _context
                 .Orders
                 .Include(x => x.Products)
                 .Include(x => x.Addresses)
                 .FirstOrDefault(x => x.OrderId == id);
 
-            if (order == null)
-            {
-                throw new ArgumentException("Bład");
-            }
+            if (order is null)
+                throw new NotFoundException("Nie znaleziono.");
 
             _context.Orders.Remove(order);
             _context.SaveChanges();
@@ -54,17 +48,15 @@ namespace ShopAPI.Services
 
         public void PutOrder(UpdataOrderDto updataOrderDto, int id)
         {
-            if (updataOrderDto == null)
-            {
-                throw new ArgumentException("Bład");
-            }
-
             var order = _context
                 .Orders
                 .Include(x => x.Products)
                 .Include(x => x.Addresses)
                 .FirstOrDefault(x => x.OrderId == id);
-            
+
+            if (order is null)
+                throw new NotFoundException("Nie znaleziono.");
+
             order.Addresses.City = updataOrderDto.City;
             order.Addresses.Email = updataOrderDto.Email;
             order.Addresses.Street = updataOrderDto.Street;
@@ -82,13 +74,12 @@ namespace ShopAPI.Services
                 .Include(x => x.Addresses)
                 .ToList();
 
-            if (orders == null)
-            {
-                throw new ArgumentException("Bład");
-            }
+            if (orders is null)
+                throw new NotFoundException("Lista jest pusta.");
+
 
             var orderDto = _mapper.Map<IEnumerable<OrderDto>>(orders);
-
+            
             return orderDto;
         }
 
@@ -101,10 +92,8 @@ namespace ShopAPI.Services
                 .Include(x => x.Addresses)
                 .FirstOrDefault(x => x.OrderId == id);
 
-            if (order == null)
-            {
-                throw new ArgumentException("Bład");
-            }
+            if (order is null)
+                throw new NotFoundException("Nie znaleziono.");
 
             var orderDto = _mapper.Map<OrderDto>(order);
 

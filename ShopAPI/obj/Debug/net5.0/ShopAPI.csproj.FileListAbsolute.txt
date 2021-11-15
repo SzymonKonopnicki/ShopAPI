@@ -59,3 +59,4 @@ E:\Code\repos\ShopAPI\ShopAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\S
 E:\Code\repos\ShopAPI\ShopAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\Code\repos\ShopAPI\ShopAPI\bin\Debug\net5.0\AutoMapper.dll
 E:\Code\repos\ShopAPI\ShopAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Code\repos\ShopAPI\ShopAPI\obj\Debug\net5.0\ShopAPI.csproj.CopyComplete

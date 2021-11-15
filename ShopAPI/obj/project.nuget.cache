@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qum3hy3vhV1GuQ1KBh37OH0dMkwvVrh8+6DWTPkGWDIcUF9Bl9BoZs3lxm8TB1HgnJzm0MQmyJAoO3tR4HIhUA==",
+  "dgSpecHash": "GQs/rNsThHhfXS0mpDVBm0Rl5dEGIIznidyB1XoLu172/DRouXxfZBuIdv3XPLfRVvvEZQKbC+uH6Z1K9R1gWQ==",
   "success": true,
   "projectFilePath": "E:\\Code\\repos\\ShopAPI\\ShopAPI\\ShopAPI.csproj",
   "expectedPackageFiles": [
@@ -109,7 +109,7 @@
     "C:\\Users\\szymo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\szymo\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\szymo\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\szymo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.9\\microsoft.netcore.app.host.win-x64.5.0.9.nupkg.sha512"
+    "C:\\Users\\szymo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }
